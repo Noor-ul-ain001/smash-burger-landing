@@ -1,0 +1,109 @@
+.panel {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 clamp(20px, 4vw, 48px) clamp(48px, 8vw, 96px);
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #0c0b0a;
+  background-size: cover;
+  background-position: center;
+}
+
+.panel:nth-of-type(3) {
+  background: radial-gradient(
+    120% 100% at 15% 100%,
+    rgba(226, 118, 46, 0.16) 0%,
+    #0c0b0a 60%
+  );
+}
+
+.panel:nth-of-type(4) {
+  background: radial-gradient(
+    120% 100% at 85% 0%,
+    rgba(226, 118, 46, 0.16) 0%,
+    #0c0b0a 60%
+  );
+}
+
+.panel-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 11, 10, 0.15) 0%,
+    rgba(12, 11, 10, 0.85) 100%
+  );
+}
+
+.panel:not([style]) .panel-veil {
+  display: none;
+}
+
+.panel-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.panel-index {
+  font-family: var(--mono, monospace);
+  font-size: 0.85rem;
+  color: var(--fill-accent, #e2762e);
+}
+
+.panel-label {
+  font-family: var(--mono, monospace);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.panel-heading {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 clamp(20px, 3vw, 32px);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.panel-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.panel-mask-line {
+  display: block;
+}
+
+.panel-cta {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  padding: 14px 32px;
+  border-radius: 8px;
+  background: var(--fill-accent, #e2762e);
+  color: #14100b;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(226, 118, 46, 0.35);
+}
